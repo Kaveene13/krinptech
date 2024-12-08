@@ -1,18 +1,18 @@
 
-. {
+/* Base Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
 
 body {
     background: #081b29;
     color: #ededed;
-
 }
 
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -33,19 +33,21 @@ body {
     font-weight: 600;
 }
 
-.navbar a{
+.navbar a {
     font-size: 18px;
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
-    transition: .3s;
+    transition: 0.3s;
 }
+
 .navbar a:hover,
 .navbar a.active {
     color: #00abf0;
 }
 
+/* Home Section */
 .home {
     height: 100vh;
     display: flex;
@@ -54,7 +56,7 @@ body {
 }
 
 .home-content {
-   max-width: 600px;
+    max-width: 600px;
 }
 
 .home-content h1 {
@@ -79,7 +81,6 @@ body {
     justify-content: space-between;
     width: 345px;
     height: 50px;
-    
 }
 
 .btn-box a {
@@ -99,7 +100,7 @@ body {
     letter-spacing: 1px;
     z-index: 1;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn-box a:hover {
@@ -115,7 +116,7 @@ body {
     color: #081b29;
 }
 
-.btn-box a:nth-child(2)::before{
+.btn-box a:nth-child(2)::before {
     background: #00abf0;
 }
 
@@ -123,14 +124,99 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 00;
+    left: 0;
     width: 0%;
     height: 100%;
     background: #081b29;
     z-index: -1;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.btn-box a:hover::before{
+.btn-box a:hover::before {
     width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 48px;
+    }
+
+    .home-content h3 {
+        font-size: 28px;
+    }
+
+    .btn-box {
+        width: 300px;
+    }
+
+    .btn-box a {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        padding: 0 5%;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .btn-box a {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .btn-box a {
+        font-size: 16px;
+    }
 }
