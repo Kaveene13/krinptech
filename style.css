@@ -1,27 +1,86 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #081b29;
+    --accent-color: #00abf0;
+    --secondary-bg: #ededed;
+}
+
+.dark-mode {
+    --bg-color: #081b29;
+    --text-color: #ededed;
+    --accent-color: #00abf0;
+    --secondary-bg: #2c3e50;
+}
+
 body {
-    background: #081b29;
-    color: #ededed;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.navbar-brand {
+.navbar {
+    background-color: var(--secondary-bg);
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+}
+
+.navbar .nav-link.active, 
+.navbar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
     font-size: 1.5rem;
-    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.nav-link.active {
-    color: #00abf0 !important;
+.btn-icon:hover {
+    color: var(--accent-color);
 }
 
-.nav-link:hover {
-    color: #00abf0 !important;
+#themeIcon {
+    transition: transform 0.3s ease;
 }
 
 .home {
     background: url(home.jpeg) no-repeat center center / cover;
+    background-color: var(--bg-color);
 }
 
-.home-sci a:hover {
-    background: #00abf0;
-    color: #081b29 !important;
+.home h1, .home h3, .home p {
+    color: var(--text-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary, 
+.btn-outline-accent {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-accent:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
