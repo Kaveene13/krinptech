@@ -7,55 +7,115 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        /* Card Styling */
+        .card {
+            border-radius: 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Input Animation */
+        .animated-input {
+            transition: all 0.4s ease;
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .animated-input:focus {
+            background: #fff;
+            border-color: #ff758c;
+            box-shadow: 0 4px 20px rgba(255, 117, 140, 0.3);
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        /* Button Animation */
+        .animated-btn {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.4);
+        }
+
+        .animated-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-45deg);
+            transition: left 0.5s ease;
+        }
+
+        .animated-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                margin: 0 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">KRINP.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item">
-                    <!-- Dark/Light Mode Toggle -->
-                    <button class="btn btn-icon nav-link" id="themeToggle">
-                        <i class='bx bx-moon' id="themeIcon"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </div>
-</header> 
-    <br/>
-    <br/>
-    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card p-4 shadow-lg">
-                    <h2 class="text-center mb-4">Contact Us</h2>
+                <div class="card p-4">
+                    <h2 class="text-center mb-4 fw-bold text-secondary">Contact Us</h2>
                     <form>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
+                            <label for="name" class="form-label fw-bold">Your Name</label>
                             <input type="text" class="form-control animated-input" id="name" placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Your Email</label>
+                            <label for="email" class="form-label fw-bold">Your Email</label>
                             <input type="email" class="form-control animated-input" id="email" placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Your Message</label>
+                            <label for="message" class="form-label fw-bold">Your Message</label>
                             <textarea class="form-control animated-input" id="message" rows="5" placeholder="Enter your message"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary animated-btn">Send Message</button>
+                            <button type="submit" class="btn animated-btn">Send Message</button>
                         </div>
                     </form>
                 </div>
