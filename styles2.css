@@ -1,5 +1,9 @@
 /* Global Styles */
-
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
 
 /* Card Styling */
 .card {
@@ -37,4 +41,3 @@
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(37, 117, 252, 0.3);
 }
-
