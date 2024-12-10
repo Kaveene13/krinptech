@@ -87,3 +87,48 @@ body {
         border-color: transparent;
     }
 }
+
+
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    border: none;
+}
+
+/* Animated Input */
+.animated-input {
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.animated-input:focus {
+    background: #fff;
+    border-color: #2575fc;
+    box-shadow: 0 4px 20px rgba(37, 117, 252, 0.2);
+    outline: none;
+}
+
+/* Button Animation */
+.animated-btn {
+    position: relative;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37, 117, 252, 0.3);
+}
