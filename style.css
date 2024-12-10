@@ -90,11 +90,7 @@ body {
 
 
 /* Global Styles */
-body {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: #333;
-    font-family: 'Arial', sans-serif;
-}
+
 
 /* Card Styling */
 .card {
