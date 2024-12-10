@@ -23,18 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const snowflakesContainer = document.querySelector('.snowflakes');
-    const numberOfSnowflakes = 100; // You can change this number to get more snowflakes
-    for (let i = 0; i < numberOfSnowflakes; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.innerText = "❆"; // You can change this to a different snowflake character if you like
-        snowflakesContainer.appendChild(snowflake);
 
-        // Randomize position and animation delay
-        snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDelay = `${Math.random() * 10}s`;
-        snowflake.style.animationDuration = `${5 + Math.random() * 10}s`; // Snowflakes will take different durations
-    }
-});
+// Select the snowflakes container
+const snowContainer = document.querySelector('.snowflakes');
+
+// Function to create a snowflake
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.textContent = '❆'; // Change to other characters like ❄, ✲, ✻ for variety
+    snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    snowflake.style.animationDelay = `${Math.random() * 5}s`; // Staggered start
+    snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Random size
+    snowContainer.appendChild(snowflake);
+
+    // Remove the snowflake after its animation ends
+    setTimeout(() => snowflake.remove(), 10000); // Match longest animation duration
+}
+
+// Create snowflakes continuously
+setInterval(createSnowflake, 300); // Adjust interval for denser or lighter snow
+
