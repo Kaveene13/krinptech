@@ -63,3 +63,27 @@ body {
 #themeIcon {
     transition: transform 0.3s ease;
 }
+
+/* Typing Animation */
+.typing-animation {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-color);
+    animation: typing 4s steps(12) infinite, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 11ch; /* Adjust to the character count of "Coming soon..." */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
