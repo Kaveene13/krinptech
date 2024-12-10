@@ -1,63 +1,141 @@
-/* Snowflakes Styling */
-.snowflakes {
+:root {
+    --bg-color: #ffffff;
+    --text-color: #081b29;
+    --accent-color: #00abf0;
+    --secondary-bg: #ededed;
+}
+
+.dark-mode {
+    --bg-color: #081b29;
+    --text-color: #ededed;
+    --accent-color: #00abf0;
+    --secondary-bg: #2c3e50;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--secondary-bg);
+    transition: background-color 0.3s;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.navbar .nav-link.active, 
+.navbar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-icon:hover {
+    color: var(--accent-color);
+}
+
+#themeIcon {
+    transition: transform 0.3s ease;
+}
+
+/* Typing Animation */
+.typing-animation {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-color);
+    animation: typing 4s steps(12) infinite, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 11ch; /* Adjust to the character count of "Coming soon..." */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Snowflakes Animation */
+.snow {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Prevent interaction with snowflakes */
-    z-index: 1000; /* Ensure snowflakes are above other content */
+    right: 0;
+    z-index: 9999;
+    pointer-events: none;
     overflow: hidden;
 }
 
 .snowflake {
     position: absolute;
     top: -10px;
-    font-size: 1.5rem;
-    color: white;
+    color: #fff;
+    font-size: 24px;
+    opacity: 0.8;
     user-select: none;
-    animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+    animation: snow 10s linear infinite;
 }
 
-.snowflake:nth-child(odd) {
-    animation-duration: 12s;
-}
-
-@keyframes fall {
+@keyframes snow {
     to {
         transform: translateY(100vh);
     }
 }
 
-@keyframes sway {
+@keyframes drift {
     0% {
-        transform: translateX(0) rotate(0deg);
+        transform: translateX(0);
     }
     50% {
-        transform: translateX(10px) rotate(30deg);
+        transform: translateX(10px);
     }
     100% {
-        transform: translateX(-10px) rotate(-30deg);
+        transform: translateX(-10px);
     }
 }
 
-/* Adjust snowflake sizes */
-.snowflake:nth-child(1) {
-    font-size: 1.2rem;
-    animation-duration: 15s;
+.snowflake:nth-child(odd) {
+    animation: snow 12s linear infinite, drift 3s linear infinite;
 }
 
-.snowflake:nth-child(2) {
-    font-size: 1.5rem;
-    animation-duration: 13s;
+.snowflake:nth-child(even) {
+    animation: snow 10s linear infinite, drift 4s linear infinite;
 }
 
-.snowflake:nth-child(3) {
-    font-size: 1.7rem;
-    animation-duration: 17s;
-}
-
-/* Optional: Add light blur effect */
-.snowflake {
-    filter: blur(0.8px);
+.snowflake:nth-child(3n) {
+    font-size: 18px;
+    animation: snow 15s linear infinite, drift 2s linear infinite;
 }
