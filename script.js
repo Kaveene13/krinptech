@@ -22,3 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const snowflakesContainer = document.querySelector('.snowflakes');
+    const numberOfSnowflakes = 100; // You can change this number to get more snowflakes
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerText = "❆"; // You can change this to a different snowflake character if you like
+        snowflakesContainer.appendChild(snowflake);
+
+        // Randomize position and animation delay
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDelay = `${Math.random() * 10}s`;
+        snowflake.style.animationDuration = `${5 + Math.random() * 10}s`; // Snowflakes will take different durations
+    }
+});
